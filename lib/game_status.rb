@@ -24,19 +24,60 @@ def won?(board)
     return false  # game is a draw
   end
 
-  WIN_COMBINATIONS.each do |win_combination|
-  win_index_1 = win_combination[0]
-  win_index_2 = win_combination[1]
-  win_index_3 = win_combination[2]
+
+  top_row_win = WIN_COMBINATIONS[0]
+  win_index_1 = top_row_win[0]
+  win_index_2 = top_row_win[1]
+  win_index_3 = top_row_win[2]
 
   position_1 = board[win_index_1]
   position_2 = board[win_index_2]
   position_3 = board[win_index_3]
 
       if position_1 == "X" && position_2 == "X" && position_3 == "X"
-        return win_combination
-      else
-        false
+        puts "Top Row Win test"
+        return top_row_win
       end
-    end
-  end  
+
+    middle_row_win = WIN_COMBINATIONS[1]
+    win_index_1 = middle_row_win[0]
+    win_index_2 = middle_row_win[1]
+    win_index_3 = middle_row_win[2]
+
+    position_1 = board[win_index_1]
+    position_2 = board[win_index_2]
+    position_3 = board[win_index_3]
+
+        if position_1 == "X" && position_2 == "X" && position_3 == "X"
+          puts "Middle Row Win test"
+          return middle_row_win
+        end
+
+      bottom_row_win = WIN_COMBINATIONS[2]
+      win_index_1 = bottom_row_win[0]
+      win_index_2 = bottom_row_win[1]
+      win_index_3 = bottom_row_win[2]
+
+      position_1 = board[win_index_1]
+      position_2 = board[win_index_2]
+      position_3 = board[win_index_3]
+
+          if position_1 == "X" && position_2 == "X" && position_3 == "X"
+            puts "Bottom Row Win test"
+            return bottom_row_win
+          end
+    ###################
+    left_column_win = WIN_COMBINATIONS[3]
+    win_index_1 = left_column_win[0]
+    win_index_2 = left_column_win[1]
+    win_index_3 = left_column_win[2]
+
+    position_1 = board[win_index_1]
+    position_2 = board[win_index_2]
+    position_3 = board[win_index_3]
+
+        if position_1 == "O" && position_2 == "O" && position_3 == "O"
+          puts "Left Column Win test"
+          return left_column_win
+        end
+  end

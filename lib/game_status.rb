@@ -80,6 +80,19 @@ def won?(board)
               puts "Center Column Win test"
               return center_column_win
             end
+            
+            right_column_win = WIN_COMBINATIONS[5]
+            win_index_1 = right_column_win[0]
+            win_index_2 = right_column_win[1]
+            win_index_3 = right_column_win[2]
 
+            position_1 = board[win_index_1]
+            position_2 = board[win_index_2]
+            position_3 = board[win_index_3]
 
+                if position_1 == "O" && position_2 == "O" && position_3 == "O"
+                  puts "Right Column Win test"
+                  return right_column_win
+                end
+    
   end

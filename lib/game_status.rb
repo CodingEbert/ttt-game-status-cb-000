@@ -80,7 +80,7 @@ def won?(board)
               puts "Center Column Win test"
               return center_column_win
             end
-            
+
             right_column_win = WIN_COMBINATIONS[5]
             win_index_1 = right_column_win[0]
             win_index_2 = right_column_win[1]
